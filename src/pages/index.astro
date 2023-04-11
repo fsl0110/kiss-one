@@ -1,15 +1,43 @@
 ---
+import Connection from "../components/Connection.astro";
+const image = "/one.png";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>One World</title>
+    <meta name="description" content="Everyone Everywhere Alltogether" />
+  </head>
+  <body>
+    <div class="connection">
+      <Connection />
+    </div>
+    <main>
+      <div class="one">
+        <img src={image} />
+        <div>to be continued...</div>
+      </div>
+    </main>
+  </body>
 </html>
+
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: helvetica, sans-serif;
+    padding: 20px;
+  }
+
+  .connection {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+</style>
