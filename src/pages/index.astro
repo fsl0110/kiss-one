@@ -56,8 +56,18 @@ import Divider from "../components/Divider.astro";
           circle="Budget"
           layer="Everyone"
         />
+        <Divider icon="=" />
+        <Blueprint
+          name="One Mindset"
+          arms="Possibilities"
+          leftLeg="Likelihoods"
+          rightLeg="Risks"
+          intersection="Act"
+          circle="World"
+          layer="Everyone"
+        />
       </div>
-      <Divider icon="=" />
+      <hr />
       <div class="possibilities">
         <h2>Possibilities</h2>
         <p>Salaries driven by social values</p>
@@ -96,6 +106,15 @@ import Divider from "../components/Divider.astro";
         <p>dependent on everything</p>
         <p>...</p>
       </div>
+      <Divider icon="&" />
+      <div class="risks">
+        <h2>Risks</h2>
+        <p>To do nothing</p>
+        <p>To do not enough</p>
+        <p>To do the wrong things</p>
+
+        <p>...</p>
+      </div>
     </main>
     <style>
       body {
@@ -132,7 +151,8 @@ import Divider from "../components/Divider.astro";
       }
 
       .possibilities,
-      .likelihoods {
+      .likelihoods,
+      .risks {
         text-align: center;
       }
     </style>
