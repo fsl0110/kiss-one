@@ -2,9 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   astro: ^2.2.1
+  astro-tooltips: ^0.6.2
 
 dependencies:
   astro: 2.2.1
+  astro-tooltips: 0.6.2
 
 packages:
 
@@ -610,6 +612,10 @@ packages:
       tslib: 2.5.0
     dev: false
 
+  /@popperjs/core/2.11.7:
+    resolution: {integrity: sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==}
+    dev: false
+
   /@types/babel__core/7.20.0:
     resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}
     dependencies:
@@ -762,6 +768,12 @@ packages:
 
   /array-iterate/2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
+    dev: false
+
+  /astro-tooltips/0.6.2:
+    resolution: {integrity: sha512-I9uXbchctnRqbc0mnxKcBRfweMuql/U+619+MzNvq3kANc7xthOXj6cMNgAkTaXoHJLdFMKL3Fx6vB5cyiiRXg==}
+    dependencies:
+      tippy.js: 6.3.7
     dev: false
 
   /astro/2.2.1:
@@ -2652,6 +2664,12 @@ packages:
     dependencies:
       globalyzer: 0.1.0
       globrex: 0.1.2
+    dev: false
+
+  /tippy.js/6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+    dependencies:
+      '@popperjs/core': 2.11.7
     dev: false
 
   /to-fast-properties/2.0.0:

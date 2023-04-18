@@ -1,6 +1,8 @@
 ---
+import { Tooltips } from "astro-tooltips";
+import Blueprint from "../components/Blueprint.astro";
 import Connection from "../components/Connection.astro";
-const image = "/one.png";
+import Divider from "../components/Divider.astro";
 ---
 
 <html lang="en">
@@ -9,35 +11,130 @@ const image = "/one.png";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>One World</title>
+    <title>KISS One World</title>
     <meta name="description" content="Everyone Everywhere Alltogether" />
+    <Tooltips
+      interactive={false}
+      delay={[15, 14000]}
+      trigger="click"
+      placement="top"
+    />
   </head>
   <body>
     <div class="connection">
       <Connection />
     </div>
     <main>
+      <h1>KISS</h1>
       <div class="one">
-        <img src={image} />
-        <div>to be continued... (maybe + somewhere)</div>
+        <Blueprint
+          name="One World"
+          arms="Shared Ressources"
+          leftLeg="Olympic Economy"
+          rightLeg="Practiced Synergy"
+          intersection="Act"
+          circle="World"
+          layer="Everything"
+        />
+        <Divider icon="+" />
+        <Blueprint
+          name="One Budget"
+          arms="Rethought Revenues"
+          leftLeg="Rethought Incomes"
+          rightLeg="Rethought Prices"
+          intersection="Act"
+          circle="Ecology"
+          layer="Everyone"
+        />
+        <Divider icon="+" />
+        <Blueprint
+          name="One Currency"
+          arms="Ecological Unit"
+          leftLeg="Ecological Transparency"
+          rightLeg="Ecological Fairness"
+          intersection="Act"
+          circle="Budget"
+          layer="Everyone"
+        />
+      </div>
+      <Divider icon="=" />
+      <div class="possibilities">
+        <h2>Possibilities</h2>
+        <p>Salaries driven by social values</p>
+        <p>Prices driven by ecological needs</p>
+        <p>Cooperation driven by ecological needs</p>
+        <p>More synergies in research through more cooperation</p>
+        <p>More prosperity through more sustainability research</p>
+        <p>More prosperity through more sustainability acting</p>
+        <p>No wars anymore</p>
+        <p>No hunger anymore</p>
+        <p>No poverty anymore</p>
+        <p>No refugees anymore</p>
+        <p>Same rights for every human</p>
+        <p>Same chances for every human</p>
+        <p>Same ressources for every human</p>
+        <p>...</p>
+      </div>
+      <Divider icon="&" />
+      <div class="likelihoods">
+        <h2>Likelihoods</h2>
+        <p>dependent on natural disasters</p>
+        <p>dependent on deseases</p>
+        <p>dependent on wars</p>
+        <p>dependent on a lack of raw materials</p>
+        <p>dependent on water shortage</p>
+        <p>dependent on lack of food</p>
+        <p>dependent on poverty</p>
+        <p>dependent on thoughts</p>
+        <p>dependent on emotions</p>
+        <p>dependent on knowledge</p>
+        <p>dependent on understand</p>
+        <p>dependent on compassion</p>
+        <p>dependent on me</p>
+        <p>dependent on you</p>
+        <p>dependent on everyone</p>
+        <p>dependent on everything</p>
+        <p>...</p>
       </div>
     </main>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        font-family: helvetica, sans-serif;
+        padding: 20px;
+      }
+
+      .connection {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      h1 {
+        width: 100%;
+        text-align: center;
+      }
+
+      .one {
+        display: flex;
+      }
+
+      @media screen and (max-width: 950px) {
+        .one {
+          flex-direction: column;
+        }
+      }
+
+      .possibilities {
+        padding-top: 30px;
+      }
+
+      .possibilities,
+      .likelihoods {
+        text-align: center;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: helvetica, sans-serif;
-    padding: 20px;
-  }
-
-  .connection {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-</style>

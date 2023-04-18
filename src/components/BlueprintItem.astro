@@ -1,0 +1,26 @@
+---
+interface Props {
+  item: string;
+  name: string;
+  desc?: string;
+}
+
+const { item, name, desc } = Astro.props;
+---
+
+<p>
+  <b>{item}</b>
+  {
+    desc && (
+      <a href="#" title={desc}>
+        {name}
+      </a>
+    )
+  }
+  {!desc && <span>{name}</span>}
+</p>
+<style>
+  b {
+    display: block;
+  }
+</style>

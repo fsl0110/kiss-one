@@ -1,0 +1,65 @@
+---
+import BlueprintItem from "./BlueprintItem.astro";
+
+const image = "/everything-everywhere-allatonce.png";
+
+interface Props {
+  name: string;
+  layer: string;
+  layerDesc?: string;
+  circle: string;
+  circleDesc?: string;
+  arms: string;
+  armsDesc?: string;
+  leftLeg: string;
+  leftLegDesc?: string;
+  rightLeg: string;
+  rightLegDesc?: string;
+  intersection: string;
+  intersectionDesc?: string;
+}
+
+const {
+  name,
+  arms,
+  armsDesc,
+  leftLeg,
+  leftLegDesc,
+  rightLeg,
+  rightLegDesc,
+  intersection,
+  intersectionDesc,
+  circle,
+  circleDesc,
+  layer,
+  layerDesc,
+} = Astro.props;
+---
+
+<head> </head>
+<div>
+  <h2>{name}</h2>
+  <img src={image} />
+  <BlueprintItem item="Arms" name={arms} desc={armsDesc} />
+  <BlueprintItem item="Left leg" name={leftLeg} desc={leftLegDesc} />
+  <BlueprintItem item="Right leg" name={rightLeg} desc={rightLegDesc} />
+  <BlueprintItem
+    item="Intersection"
+    name={intersection}
+    desc={intersectionDesc}
+  />
+  <BlueprintItem item="Circle" name={circle} desc={circleDesc} />
+  <BlueprintItem item="Layer" name={layer} desc={layerDesc} />
+</div>
+
+<style>
+  div {
+    text-align: center;
+    margin: 40px;
+  }
+
+  h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+</style>
