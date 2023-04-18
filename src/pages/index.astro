@@ -68,6 +68,7 @@ import Divider from "../components/Divider.astro";
         />
       </div>
       <hr />
+      <Divider icon="#" />
       <div class="possibilities">
         <h2>Possibilities</h2>
         <p>Salaries driven by social values</p>
@@ -88,22 +89,22 @@ import Divider from "../components/Divider.astro";
       <Divider icon="&" />
       <div class="likelihoods">
         <h2>Likelihoods</h2>
-        <p>dependent on natural disasters</p>
-        <p>dependent on deseases</p>
-        <p>dependent on wars</p>
-        <p>dependent on a lack of raw materials</p>
-        <p>dependent on water shortage</p>
-        <p>dependent on lack of food</p>
-        <p>dependent on poverty</p>
-        <p>dependent on thoughts</p>
-        <p>dependent on emotions</p>
-        <p>dependent on knowledge</p>
-        <p>dependent on understand</p>
-        <p>dependent on compassion</p>
-        <p>dependent on me</p>
-        <p>dependent on you</p>
-        <p>dependent on everyone</p>
-        <p>dependent on everything</p>
+        <p>Dependent on natural disasters</p>
+        <p>Dependent on deseases</p>
+        <p>Dependent on wars</p>
+        <p>Dependent on a lack of raw materials</p>
+        <p>Dependent on water shortage</p>
+        <p>Dependent on lack of food</p>
+        <p>Dependent on poverty</p>
+        <p>Dependent on thoughts</p>
+        <p>Dependent on emotions</p>
+        <p>Dependent on knowledge</p>
+        <p>Dependent on understand</p>
+        <p>Dependent on compassion</p>
+        <p>Dependent on me</p>
+        <p>Dependent on you</p>
+        <p>Dependent on everyone</p>
+        <p>Dependent on everything</p>
         <p>...</p>
       </div>
       <Divider icon="&" />
@@ -112,7 +113,6 @@ import Divider from "../components/Divider.astro";
         <p>To do nothing</p>
         <p>To do not enough</p>
         <p>To do the wrong things</p>
-
         <p>...</p>
       </div>
     </main>
@@ -123,6 +123,10 @@ import Divider from "../components/Divider.astro";
         justify-content: center;
         font-family: helvetica, sans-serif;
         padding: 20px;
+      }
+
+      main {
+        max-width: 1150px;
       }
 
       .connection {
@@ -138,16 +142,18 @@ import Divider from "../components/Divider.astro";
 
       .one {
         display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
       }
 
-      @media screen and (max-width: 950px) {
+      hr {
+        margin-bottom: 80px;
+      }
+
+      @media screen and (max-width: 1150px) {
         .one {
           flex-direction: column;
         }
-      }
-
-      .possibilities {
-        padding-top: 30px;
       }
 
       .possibilities,
