@@ -46,7 +46,7 @@ export const data = {
         },
         "circle": {
             "name": "World",
-            "description": ""
+            "description": "z"
         },
         "intersection": {
             "name": "Act",
@@ -147,12 +147,12 @@ export const data = {
             "description": "",
             "thoughts": [{
                 "teaser": "Everyone has a right to a basic income",
-                "description": "Incomes are based on "   
+                "description": "Because of the budget: the fewer jobs there are, the higher the basic income, the more jobs there are, the lower the basic income. If there were no more jobs, then everyone would receive the average wage as basic income."   
             }, {
                 "teaser": "Incomes are based on value to community and nature",
                 "description": ""   
             }, {
-                "teaser": "Income are consumption rights for community and natural resources",
+                "teaser": "Incomes are consumption rights for community and natural resources",
                 "description": ""   
             }, {
                 "teaser": "More value for the community means more consumption rights and vice versa",

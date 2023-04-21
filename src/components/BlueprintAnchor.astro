@@ -5,27 +5,30 @@ import Tooltip from "./Tooltip.astro";
 interface Props {
   name: string;
   thought: string;
-  desc?: string;
+  description?: string;
 }
 
-const { name, thought, desc } = Astro.props;
+const { name, thought, description } = Astro.props;
 ---
 
 <div class="thought">
   <div class="name">{name}</div>
   {
-    desc && (
-      <Tooltip content={desc}>
-        <a href={`#${slugify(thought)}`} title={desc}>
+    description ? (
+      <Tooltip content={description}>
+        <a href={`#${slugify(thought)}`} title={description}>
           {thought}
         </a>
       </Tooltip>
+    ) : (
+      !description && <a href={`#${slugify(thought)}`}>{thought}</a>
     )
-  }{!desc && <a href={`#${slugify(thought)}`}>{thought}</a>}
+  }
 </div>
 <style>
   a {
     font-size: 18px;
+    text-underline-offset: 4px;
   }
 
   .name {

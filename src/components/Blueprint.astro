@@ -1,5 +1,5 @@
 ---
-import type { ShortThought, Thought, Thoughts } from "../scripts/data";
+import type { ShortThought, Thoughts } from "../data";
 import BlueprintAnker from "./BlueprintAnchor.astro";
 import BlueprintTooltip from "./BlueprintTooltip.astro";
 
@@ -22,32 +22,36 @@ const { name, arms, leftLeg, rightLeg, intersection, circle, layer } =
 <div>
   <h2>{name}</h2>
   <img src={image} width="200" height="200" />
-  <BlueprintAnker name="Arms" thought={arms.name} desc={arms.description} />
+  <BlueprintAnker
+    name="Arms"
+    thought={arms.name}
+    description={arms.description}
+  />
   <BlueprintAnker
     name="Left Leg"
     thought={leftLeg.name}
-    desc={leftLeg.description}
+    description={leftLeg.description}
   />
   <BlueprintAnker
     name="Right Leg"
     thought={rightLeg.name}
-    desc={rightLeg.description}
+    description={rightLeg.description}
   />
   <BlueprintTooltip
     name="Intersection"
     thought={intersection.name}
-    desc={intersection.description}
+    description={intersection.description}
   />
   <BlueprintTooltip
     name="Circle"
     thought={circle.name}
-    desc={circle.description}
+    description={circle.description}
   />
-  <BlueprintTooltip
+  <!--   <BlueprintTooltip
     name="Layer"
     thought={layer.name}
     desc={layer.description}
-  />
+  /> -->
 </div>
 
 <style>

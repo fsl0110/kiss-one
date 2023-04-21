@@ -4,15 +4,21 @@ import Tooltip from "./Tooltip.astro";
 interface Props {
   name: string;
   thought: string;
-  desc?: string;
+  description?: string;
 }
 
-const { name, thought, desc } = Astro.props;
+const { name, thought, description } = Astro.props;
 ---
 
 <div class="thought">
   <div class="name">{name}</div>
-  {desc ? <Tooltip content={desc}>{thought}</Tooltip> : <span>{thought}</span>}
+  {
+    description ? (
+      <Tooltip content={description}>{thought}</Tooltip>
+    ) : (
+      <span>{thought}</span>
+    )
+  }
 </div>
 <style>
   .name {
