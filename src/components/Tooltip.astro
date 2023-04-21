@@ -1,0 +1,24 @@
+---
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<span data-tippy-content={content}>
+  <slot />
+</span>
+
+<script>
+  import tippy from "tippy.js";
+  import "tippy.js/dist/tippy.css";
+  import "tippy.js/animations/scale.css";
+
+  tippy("[data-tippy-content]", {
+    delay: [15, 15],
+    allowHTML: true,
+    animation: "scale",
+  });
+</script>
+<style is:global></style>

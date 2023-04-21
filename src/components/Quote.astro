@@ -1,0 +1,29 @@
+---
+interface Props {
+  text: string;
+  author: string;
+}
+
+const { text, author } = Astro.props;
+---
+
+<div>
+  <blockquote>
+    {text}
+  </blockquote>
+  {author}
+</div>
+
+<style>
+  div {
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  blockquote {
+    font-size: 20px;
+    font-weight: 100;
+  }
+</style>

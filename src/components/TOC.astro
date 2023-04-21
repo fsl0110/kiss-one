@@ -1,0 +1,157 @@
+---
+import { slugify } from "../scripts/slugify";
+import { data } from "../data";
+import ScrollTop from "./ScrollTop.astro";
+
+const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
+// &#9776;
+// &#9775;
+---
+
+<button id="toc-btn">&#9788;</button>
+
+<aside>
+  <button class="close-btn">&#10005;</button>
+  <div>
+    <div class="main-thought"><span class="math">#</span>{OneWorld.name}</div>
+    <a class="sub-thought" href={`#${slugify(OneWorld.arms.name)}`}>
+      {OneWorld.arms.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneWorld.leftLeg.name)}`}>
+      {OneWorld.leftLeg.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneWorld.rightLeg.name)}`}>
+      {OneWorld.rightLeg.name}
+    </a>
+
+    <div class="main-thought"><span class="math">+</span>{OneBudget.name}</div>
+    <a class="sub-thought" href={`#${slugify(OneBudget.arms.name)}`}>
+      {OneBudget.arms.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneBudget.leftLeg.name)}`}>
+      {OneBudget.leftLeg.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneBudget.rightLeg.name)}`}>
+      {OneBudget.rightLeg.name}
+    </a>
+    <div class="main-thought">
+      <span class="math">+</span>{OneCurrency.name}
+    </div>
+    <a class="sub-thought" href={`#${slugify(OneCurrency.arms.name)}`}>
+      {OneCurrency.arms.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneCurrency.leftLeg.name)}`}>
+      {OneCurrency.leftLeg.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneCurrency.rightLeg.name)}`}>
+      {OneCurrency.rightLeg.name}
+    </a>
+    <div class="main-thought"><span class="math">=</span>{OneMindset.name}</div>
+    <a class="sub-thought" href={`#${slugify(OneMindset.arms.name)}`}>
+      {OneMindset.arms.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneMindset.leftLeg.name)}`}>
+      {OneMindset.leftLeg.name}
+    </a>
+    <a class="sub-thought" href={`#${slugify(OneMindset.rightLeg.name)}`}>
+      {OneMindset.rightLeg.name}
+    </a>
+  </div>
+  <ScrollTop />
+</aside>
+<style>
+  .math {
+    padding-right: 8px;
+  }
+  a {
+    display: block;
+    color: white;
+  }
+  .main-thought {
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 25px;
+    padding-top: 15px;
+  }
+
+  .sub-thought {
+    line-height: 35px;
+    font-weight: 100;
+    font-size: 20px;
+    padding-left: 24px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  #toc-btn {
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    border-radius: 50%;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    outline: none;
+    display: none;
+    cursor: pointer;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 270px;
+    padding: 20px;
+    padding-top: 60px;
+    padding-left: 30px;
+    background-color: black;
+    color: white;
+    display: none;
+  }
+</style>
+<script>
+  const om = document.querySelector("#one-mindset") as HTMLDivElement;
+  const tocBtn = document.querySelector("#toc-btn") as HTMLButtonElement;
+  const closeBtn = document.querySelector(".close-btn") as HTMLButtonElement;
+  const aside = document.querySelector("aside") as HTMLDivElement;
+
+  closeBtn.addEventListener("click", () => {
+    aside.style.display = "none";
+  });
+
+  tocBtn.addEventListener("click", () => {
+    aside.style.display = "block";
+  });
+
+  document.addEventListener("scroll", () => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries[0].intersectionRatio === 0
+          ? (tocBtn.style.display = "block")
+          : (tocBtn.style.display = "none");
+      }
+    );
+    observer.observe(om);
+  });
+</script>

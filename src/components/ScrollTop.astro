@@ -1,0 +1,42 @@
+---
+// &#9774;
+// &#8679;
+---
+
+<button class="btn">&#8679;</button>
+<style>
+  button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 50%;
+    color: black;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    z-index: 100;
+    border: 2px solid black;
+    display: none;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+</style>
+<script>
+  document.addEventListener("scroll", () => {
+    window.pageYOffset >= 1000
+      ? (btn.style.display = "block")
+      : (btn.style.display = "none");
+  });
+
+  const btn = document.getElementsByClassName("btn")[0] as HTMLButtonElement;
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  });
+</script>

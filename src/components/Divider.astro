@@ -1,16 +1,17 @@
 ---
 interface Props {
   icon: string;
+  size?: string;
 }
 
-const { icon } = Astro.props;
+const { icon, size = "60px" } = Astro.props;
 ---
 
 <div>{icon}</div>
 
-<style>
+<style define:vars={{ size }}>
   div {
-    font-size: 60px;
+    font-size: var(--size);
     width: 100%;
     display: flex;
     justify-content: center;

@@ -1,8 +1,14 @@
 ---
-import { Tooltips } from "astro-tooltips";
-import Blueprint from "../components/Blueprint.astro";
-import Connection from "../components/Connection.astro";
 import Divider from "../components/Divider.astro";
+import One from "../components/One.astro";
+import ScrollTop from "../components/ScrollTop.astro";
+import Quote from "../components/Quote.astro";
+import Header from "../components/Header.astro";
+import TOC from "../components/TOC.astro";
+import Thoughts from "../components/Thoughts.astro";
+import { data } from "../data";
+
+const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
 ---
 
 <html lang="en">
@@ -13,154 +19,60 @@ import Divider from "../components/Divider.astro";
     <meta name="generator" content={Astro.generator} />
     <title>KISS One World</title>
     <meta name="description" content="Everyone Everywhere Alltogether" />
-    <Tooltips
-      interactive={false}
-      delay={[15, 14000]}
-      trigger="click"
-      placement="top"
-    />
   </head>
   <body>
-    <div class="connection">
-      <Connection />
-    </div>
+    <ScrollTop />
     <main>
-      <h1>KISS</h1>
-      <div class="one">
-        <Blueprint
-          name="One World"
-          arms="Shared Ressources"
-          leftLeg="Olympic Economy"
-          rightLeg="Practiced Synergy"
-          intersection="Act"
-          circle="World"
-          layer="Everything"
-        />
-        <Divider icon="+" />
-        <Blueprint
-          name="One Budget"
-          arms="Rethought Revenues"
-          leftLeg="Rethought Incomes"
-          rightLeg="Rethought Prices"
-          intersection="Act"
-          circle="Ecology"
-          layer="Everyone"
-        />
-        <Divider icon="+" />
-        <Blueprint
-          name="One Currency"
-          arms="Ecological Unit"
-          leftLeg="Ecological Transparency"
-          rightLeg="Ecological Fairness"
-          intersection="Act"
-          circle="Budget"
-          layer="Everyone"
-        />
-        <Divider icon="=" />
-        <Blueprint
-          name="One Mindset"
-          arms="Possibilities"
-          leftLeg="Likelihoods"
-          rightLeg="Risks"
-          intersection="Act"
-          circle="World"
-          layer="Everyone"
-        />
-      </div>
-      <hr />
-      <Divider icon="#" />
-      <div class="possibilities">
-        <h2>Possibilities</h2>
-        <p>Salaries driven by social values</p>
-        <p>Prices driven by ecological needs</p>
-        <p>Cooperation driven by ecological needs</p>
-        <p>More synergies in research through more cooperation</p>
-        <p>More prosperity through more sustainability research</p>
-        <p>More prosperity through more sustainability acting</p>
-        <p>No wars anymore</p>
-        <p>No hunger anymore</p>
-        <p>No poverty anymore</p>
-        <p>No refugees anymore</p>
-        <p>Same rights for every human</p>
-        <p>Same chances for every human</p>
-        <p>Same ressources for every human</p>
-        <p>...</p>
-      </div>
-      <Divider icon="&" />
-      <div class="likelihoods">
-        <h2>Likelihoods</h2>
-        <p>Dependent on natural disasters</p>
-        <p>Dependent on deseases</p>
-        <p>Dependent on wars</p>
-        <p>Dependent on a lack of raw materials</p>
-        <p>Dependent on water shortage</p>
-        <p>Dependent on lack of food</p>
-        <p>Dependent on poverty</p>
-        <p>Dependent on thoughts</p>
-        <p>Dependent on emotions</p>
-        <p>Dependent on knowledge</p>
-        <p>Dependent on understand</p>
-        <p>Dependent on compassion</p>
-        <p>Dependent on me</p>
-        <p>Dependent on you</p>
-        <p>Dependent on everyone</p>
-        <p>Dependent on everything</p>
-        <p>...</p>
-      </div>
-      <Divider icon="&" />
-      <div class="risks">
-        <h2>Risks</h2>
-        <p>To do nothing</p>
-        <p>To do not enough</p>
-        <p>To do the wrong things</p>
-        <p>...</p>
+      <Header />
+      <One />
+      <TOC />
+      <Quote
+        text="„We can't solve problems by using the same kind of thinking we used when we created them.”"
+        author="Albert Einstein"
+      />
+      <div class="content">
+        <Divider icon="*** DRAFT ***" size="80px" />
+        <Divider icon="#" size="80px" />
+        <Thoughts data={OneWorld.arms} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneWorld.leftLeg} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneWorld.rightLeg} />
+        <Divider icon="+" size="80px" />
+        <Thoughts data={OneBudget.arms} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneBudget.leftLeg} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneBudget.rightLeg} />
+        <Divider icon="+" size="80px" />
+        <Thoughts data={OneCurrency.arms} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneCurrency.leftLeg} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneCurrency.rightLeg} />
+        <Divider icon="=" size="80px" />
+        <Thoughts data={OneMindset.arms} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneMindset.leftLeg} />
+        <Divider icon="&" size="40px" />
+        <Thoughts data={OneMindset.rightLeg} />
       </div>
     </main>
-    <style>
-      body {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        font-family: helvetica, sans-serif;
-        padding: 20px;
-      }
-
-      main {
-        max-width: 1150px;
-      }
-
-      .connection {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-
-      h1 {
-        width: 100%;
-        text-align: center;
-      }
-
-      .one {
-        display: flex;
-        justify-content: center;
-        padding-bottom: 40px;
-      }
-
-      hr {
-        margin-bottom: 80px;
-      }
-
-      @media screen and (max-width: 1150px) {
-        .one {
-          flex-direction: column;
-        }
-      }
-
-      .possibilities,
-      .likelihoods,
-      .risks {
-        text-align: center;
-      }
-    </style>
   </body>
+  <style>
+    .content {
+      text-align: center;
+      border-top: 1px solid black;
+      padding-top: 80px;
+    }
+  </style>
+  <style is:global>
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      font-family: helvetica, sans-serif;
+      padding: 20px;
+    }
+  </style>
 </html>

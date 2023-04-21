@@ -1,0 +1,42 @@
+---
+import type { Thoughts, Thought } from "../scripts/data";
+import { slugify } from "../scripts/slugify";
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  data: Thoughts;
+}
+
+const { name, thoughts } = Astro.props.data;
+---
+
+<div id={slugify(name)}>
+  <h2>{name}</h2>
+  <ul>
+    {
+      thoughts.map((thought: Thought) => (
+        <li>
+          {thought.description ? (
+            <Tooltip content={thought.description}>{thought.teaser}</Tooltip>
+          ) : (
+            thought.teaser
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<style>
+  h2 {
+    padding-top: 20px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  li {
+    list-style-type: none;
+    padding-bottom: 14px;
+  }
+</style>

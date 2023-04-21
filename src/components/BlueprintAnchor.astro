@@ -1,0 +1,39 @@
+---
+import { slugify } from "../scripts/slugify";
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  name: string;
+  thought: string;
+  desc?: string;
+}
+
+const { name, thought, desc } = Astro.props;
+---
+
+<div class="thought">
+  <div class="name">{name}</div>
+  {
+    desc && (
+      <Tooltip content={desc}>
+        <a href={`#${slugify(thought)}`} title={desc}>
+          {thought}
+        </a>
+      </Tooltip>
+    )
+  }{!desc && <a href={`#${slugify(thought)}`}>{thought}</a>}
+</div>
+<style>
+  a {
+    font-size: 18px;
+  }
+
+  .name {
+    font-weight: 100;
+    padding-bottom: 4px;
+  }
+
+  .thought {
+    margin-bottom: 18px;
+  }
+</style>

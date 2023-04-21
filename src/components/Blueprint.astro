@@ -1,61 +1,60 @@
 ---
-import BlueprintItem from "./BlueprintItem.astro";
+import type { ShortThought, Thought, Thoughts } from "../scripts/data";
+import BlueprintAnker from "./BlueprintAnchor.astro";
+import BlueprintTooltip from "./BlueprintTooltip.astro";
 
 const image = "/everything-everywhere-allatonce.png";
 
 interface Props {
   name: string;
-  layer: string;
-  layerDesc?: string;
-  circle: string;
-  circleDesc?: string;
-  arms: string;
-  armsDesc?: string;
-  leftLeg: string;
-  leftLegDesc?: string;
-  rightLeg: string;
-  rightLegDesc?: string;
-  intersection: string;
-  intersectionDesc?: string;
+  layer: ShortThought;
+  circle: ShortThought;
+  intersection: ShortThought;
+  arms: Thoughts;
+  leftLeg: Thoughts;
+  rightLeg: Thoughts;
 }
 
-const {
-  name,
-  arms,
-  armsDesc,
-  leftLeg,
-  leftLegDesc,
-  rightLeg,
-  rightLegDesc,
-  intersection,
-  intersectionDesc,
-  circle,
-  circleDesc,
-  layer,
-  layerDesc,
-} = Astro.props;
+const { name, arms, leftLeg, rightLeg, intersection, circle, layer } =
+  Astro.props;
 ---
 
-<head> </head>
 <div>
   <h2>{name}</h2>
   <img src={image} width="200" height="200" />
-  <BlueprintItem item="Arms" name={arms} desc={armsDesc} />
-  <BlueprintItem item="Left leg" name={leftLeg} desc={leftLegDesc} />
-  <BlueprintItem item="Right leg" name={rightLeg} desc={rightLegDesc} />
-  <BlueprintItem
-    item="Intersection"
-    name={intersection}
-    desc={intersectionDesc}
+  <BlueprintAnker name="Arms" thought={arms.name} desc={arms.description} />
+  <BlueprintAnker
+    name="Left Leg"
+    thought={leftLeg.name}
+    desc={leftLeg.description}
   />
-  <BlueprintItem item="Circle" name={circle} desc={circleDesc} />
-  <BlueprintItem item="Layer" name={layer} desc={layerDesc} />
+  <BlueprintAnker
+    name="Right Leg"
+    thought={rightLeg.name}
+    desc={rightLeg.description}
+  />
+  <BlueprintTooltip
+    name="Intersection"
+    thought={intersection.name}
+    desc={intersection.description}
+  />
+  <BlueprintTooltip
+    name="Circle"
+    thought={circle.name}
+    desc={circle.description}
+  />
+  <BlueprintTooltip
+    name="Layer"
+    thought={layer.name}
+    desc={layer.description}
+  />
 </div>
 
 <style>
   div {
     text-align: center;
-    margin: 40px;
+    margin: 30px;
+    margin-bottom: 10px;
   }
 
   h2 {

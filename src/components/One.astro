@@ -1,0 +1,63 @@
+---
+import Blueprint from "../components/Blueprint.astro";
+import Divider from "../components/Divider.astro";
+import { data } from "../data";
+
+const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
+---
+
+<div id="one-mindset">
+  <Blueprint
+    name={OneWorld.name}
+    arms={OneWorld.arms}
+    leftLeg={OneWorld.leftLeg}
+    rightLeg={OneWorld.rightLeg}
+    intersection={OneWorld.intersection}
+    circle={OneWorld.circle}
+    layer={OneWorld.layer}
+  />
+  <Divider icon="+" />
+  <Blueprint
+    name={OneBudget.name}
+    arms={OneBudget.arms}
+    leftLeg={OneBudget.leftLeg}
+    rightLeg={OneBudget.rightLeg}
+    intersection={OneBudget.intersection}
+    circle={OneBudget.circle}
+    layer={OneBudget.layer}
+  />
+  <Divider icon="+" />
+  <Blueprint
+    name={OneCurrency.name}
+    arms={OneCurrency.arms}
+    leftLeg={OneCurrency.leftLeg}
+    rightLeg={OneCurrency.rightLeg}
+    intersection={OneCurrency.intersection}
+    circle={OneCurrency.circle}
+    layer={OneCurrency.layer}
+  />
+  <Divider icon="=" />
+  <Blueprint
+    name={OneMindset.name}
+    arms={OneMindset.arms}
+    leftLeg={OneMindset.leftLeg}
+    rightLeg={OneMindset.rightLeg}
+    intersection={OneMindset.intersection}
+    circle={OneMindset.circle}
+    layer={OneMindset.layer}
+  />
+</div>
+<style>
+  div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    max-width: 1150px;
+  }
+
+  @media screen and (max-width: 1150px) {
+    div {
+      flex-direction: column;
+    }
+  }
+</style>
