@@ -1,9 +1,9 @@
 ---
 import Blueprint from "../components/Blueprint.astro";
 import Divider from "../components/Divider.astro";
-import { data } from "../data";
+import { oneThoughts } from "../data/one";
 
-const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
+const { OneWorld, OneBudget, OneCurrency, OneMindset } = oneThoughts;
 ---
 
 <div id="one-mindset">
@@ -12,7 +12,7 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     arms={OneWorld.arms}
     leftLeg={OneWorld.leftLeg}
     rightLeg={OneWorld.rightLeg}
-    intersection={OneWorld.intersection}
+    heart={OneWorld.heart}
     circle={OneWorld.circle}
     layer={OneWorld.layer}
   />
@@ -22,7 +22,7 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     arms={OneBudget.arms}
     leftLeg={OneBudget.leftLeg}
     rightLeg={OneBudget.rightLeg}
-    intersection={OneBudget.intersection}
+    heart={OneBudget.heart}
     circle={OneBudget.circle}
     layer={OneBudget.layer}
   />
@@ -32,7 +32,7 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     arms={OneCurrency.arms}
     leftLeg={OneCurrency.leftLeg}
     rightLeg={OneCurrency.rightLeg}
-    intersection={OneCurrency.intersection}
+    heart={OneCurrency.heart}
     circle={OneCurrency.circle}
     layer={OneCurrency.layer}
   />
@@ -42,7 +42,7 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     arms={OneMindset.arms}
     leftLeg={OneMindset.leftLeg}
     rightLeg={OneMindset.rightLeg}
-    intersection={OneMindset.intersection}
+    heart={OneMindset.heart}
     circle={OneMindset.circle}
     layer={OneMindset.layer}
   />
@@ -51,7 +51,7 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
   div {
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
+    padding: 30px 0;
     max-width: 1150px;
   }
 

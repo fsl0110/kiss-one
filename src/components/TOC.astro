@@ -1,16 +1,44 @@
 ---
 import { slugify } from "../scripts/slugify";
-import { data } from "../data";
+import { oneThoughts } from "../data/one";
+import Divider from "./Divider.astro";
 
-const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
+const { OneWorld, OneBudget, OneCurrency, OneMindset } = oneThoughts;
 ---
 
-<button id="toc-btn">&#9788;</button>
+<button id="toc-btn"
+  ><svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="50"
+    height="50"
+    viewBox="0 0 16 16"
+    ><path
+      fill="currentColor"
+      d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7zm0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8z"
+    ></path><path
+      fill="currentColor"
+      d="M4 7h2v2H4V7zm3 0h2v2H7V7zm3 0h2v2h-2V7z"></path></svg
+  >
+</button>
 
 <aside>
-  <button class="close-btn">&#10005;</button>
-  <div>
-    <div class="main-thought"><span class="math">#</span>{OneWorld.name}</div>
+  <button class="close-btn"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="50"
+      viewBox="0 0 16 16"
+      ><path
+        fill="currentColor"
+        d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7zm0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8z"
+      ></path><path
+        fill="currentColor"
+        d="M12.2 10.8L9.4 8l2.8-2.8l-1.4-1.4L8 6.6L5.2 3.8L3.8 5.2L6.6 8l-2.8 2.8l1.4 1.4L8 9.4l2.8 2.8z"
+      ></path></svg
+    ></button
+  >
+  <div class="toc">
+    <div class="main-thought">{OneWorld.name}</div>
     <a class="sub-thought" href={`#${slugify(OneWorld.arms.name)}`}>
       {OneWorld.arms.name}
     </a>
@@ -20,8 +48,8 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     <a class="sub-thought" href={`#${slugify(OneWorld.rightLeg.name)}`}>
       {OneWorld.rightLeg.name}
     </a>
-
-    <div class="main-thought"><span class="math">+</span>{OneBudget.name}</div>
+    <Divider icon="+" size="40px" />
+    <div class="main-thought">{OneBudget.name}</div>
     <a class="sub-thought" href={`#${slugify(OneBudget.arms.name)}`}>
       {OneBudget.arms.name}
     </a>
@@ -31,8 +59,9 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     <a class="sub-thought" href={`#${slugify(OneBudget.rightLeg.name)}`}>
       {OneBudget.rightLeg.name}
     </a>
+    <Divider icon="+" size="40px" />
     <div class="main-thought">
-      <span class="math">+</span>{OneCurrency.name}
+      {OneCurrency.name}
     </div>
     <a class="sub-thought" href={`#${slugify(OneCurrency.arms.name)}`}>
       {OneCurrency.arms.name}
@@ -43,7 +72,8 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     <a class="sub-thought" href={`#${slugify(OneCurrency.rightLeg.name)}`}>
       {OneCurrency.rightLeg.name}
     </a>
-    <div class="main-thought"><span class="math">=</span>{OneMindset.name}</div>
+    <Divider icon="=" size="40px" />
+    <div class="main-thought">{OneMindset.name}</div>
     <a class="sub-thought" href={`#${slugify(OneMindset.arms.name)}`}>
       {OneMindset.arms.name}
     </a>
@@ -56,39 +86,34 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
   </div>
 </aside>
 <style>
-  .math {
-    padding-right: 8px;
+  .toc {
+    text-align: center;
+    padding-top: 30px;
   }
   a {
     display: block;
     color: white;
+    text-decoration: underline;
   }
   .main-thought {
-    line-height: 40px;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 150%;
     padding-top: 15px;
+    padding-bottom: 5px;
   }
 
   .sub-thought {
-    line-height: 35px;
     font-weight: 100;
-    font-size: 20px;
-    padding-left: 24px;
+    padding-bottom: 10px;
+    font-size: 125%;
+
     text-underline-offset: 4px;
   }
 
   .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 60px;
-    height: 60px;
-    border: none;
-    outline: none;
-    background-color: black;
-    color: white;
-    font-size: 40px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
   }
 
@@ -96,21 +121,8 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     position: fixed;
     bottom: 50%;
     right: 20px;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 35px;
     border-radius: 50%;
-    color: black;
-    background-color: white;
-    border: 2px solid black;
-    outline: none;
-    display: none;
     cursor: pointer;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   }
 
   aside {
@@ -121,7 +133,7 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
     width: 270px;
     padding: 20px;
     padding-top: 60px;
-    padding-left: 30px;
+    padding-left: 25px;
     background-color: black;
     color: white;
     display: none;
@@ -130,22 +142,25 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = data;
 <script>
   const om = document.querySelector("#one-mindset") as HTMLDivElement;
   const tocBtn = document.querySelector("#toc-btn") as HTMLButtonElement;
+  const scrollTopSVG = document.querySelector(".scroll-top-svg") as HTMLElement;
   const closeBtn = document.querySelector(".close-btn") as HTMLButtonElement;
   const aside = document.querySelector("aside") as HTMLDivElement;
 
   closeBtn.addEventListener("click", () => {
     aside.style.display = "none";
+    scrollTopSVG.style.color = "black";
   });
 
   tocBtn.addEventListener("click", () => {
-    aside.style.display = "block";
+    aside.style.display = "flex";
+    scrollTopSVG.style.color = "white";
   });
 
   document.addEventListener("scroll", () => {
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries[0].intersectionRatio === 0
-          ? (tocBtn.style.display = "block")
+          ? (tocBtn.style.display = "flex")
           : (tocBtn.style.display = "none");
       }
     );

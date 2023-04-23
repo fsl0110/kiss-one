@@ -1,5 +1,5 @@
 ---
-import type { Thoughts, Thought } from "../data";
+import type { Thoughts, Thought } from "../data/one";
 import { slugify } from "../scripts/slugify";
 import Tooltip from "./Tooltip.astro";
 
@@ -11,7 +11,7 @@ const { name, thoughts } = Astro.props.data;
 ---
 
 <div id={slugify(name)}>
-  <h2>{name}</h2>
+  <h3>{name}</h3>
   <ul>
     {
       thoughts.map((thought: Thought) => (
@@ -27,16 +27,8 @@ const { name, thoughts } = Astro.props.data;
   </ul>
 </div>
 <style>
-  h2 {
-    padding-top: 20px;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px;
-  }
+  h3,
   li {
-    list-style-type: none;
     padding-bottom: 14px;
   }
 </style>

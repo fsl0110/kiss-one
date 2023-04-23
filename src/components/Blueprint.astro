@@ -1,5 +1,5 @@
 ---
-import type { ShortThought, Thoughts } from "../data";
+import type { ShortThought, Thoughts } from "../data/one";
 import BlueprintAnker from "./BlueprintAnchor.astro";
 import BlueprintTooltip from "./BlueprintTooltip.astro";
 
@@ -9,14 +9,13 @@ interface Props {
   name: string;
   layer: ShortThought;
   circle: ShortThought;
-  intersection: ShortThought;
+  heart: ShortThought;
   arms: Thoughts;
   leftLeg: Thoughts;
   rightLeg: Thoughts;
 }
 
-const { name, arms, leftLeg, rightLeg, intersection, circle, layer } =
-  Astro.props;
+const { name, arms, leftLeg, rightLeg, heart, circle } = Astro.props;
 ---
 
 <div>
@@ -38,9 +37,9 @@ const { name, arms, leftLeg, rightLeg, intersection, circle, layer } =
     description={rightLeg.description}
   />
   <BlueprintTooltip
-    name="Intersection"
-    thought={intersection.name}
-    description={intersection.description}
+    name="Heart"
+    thought={heart.name}
+    description={heart.description}
   />
   <BlueprintTooltip
     name="Circle"
@@ -57,12 +56,7 @@ const { name, arms, leftLeg, rightLeg, intersection, circle, layer } =
 <style>
   div {
     text-align: center;
-    margin: 30px;
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    padding-bottom: 0;
-    margin-bottom: 0;
+    margin: 40px;
+    min-width: 200px;
   }
 </style>
