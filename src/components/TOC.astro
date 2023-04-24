@@ -106,7 +106,6 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = oneThoughts;
     font-weight: 100;
     padding-bottom: 10px;
     font-size: 125%;
-
     text-underline-offset: 4px;
   }
 
@@ -137,23 +136,24 @@ const { OneWorld, OneBudget, OneCurrency, OneMindset } = oneThoughts;
     background-color: black;
     color: white;
     display: none;
+    overflow-y: auto;
   }
 </style>
 <script>
   const om = document.querySelector("#one-mindset") as HTMLDivElement;
   const tocBtn = document.querySelector("#toc-btn") as HTMLButtonElement;
-  const scrollTopSVG = document.querySelector(".scroll-top-svg") as HTMLElement;
   const closeBtn = document.querySelector(".close-btn") as HTMLButtonElement;
   const aside = document.querySelector("aside") as HTMLDivElement;
+  const scrollBtn = document.querySelector(".scroll-btn") as HTMLButtonElement;
 
   closeBtn.addEventListener("click", () => {
     aside.style.display = "none";
-    scrollTopSVG.style.color = "black";
+    scrollBtn.style.right = "20px";
   });
 
   tocBtn.addEventListener("click", () => {
     aside.style.display = "flex";
-    scrollTopSVG.style.color = "white";
+    scrollBtn.style.right = "290px";
   });
 
   document.addEventListener("scroll", () => {

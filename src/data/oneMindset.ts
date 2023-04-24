@@ -55,9 +55,6 @@ export const oneMindset = {
         },{
             "teaser": "Same ressources for every human",
             "description": ""   
-        }, {
-            "teaser": "...",
-            "description": ""   
         }]
     },
     "leftLeg": {
@@ -108,9 +105,6 @@ export const oneMindset = {
         },{
             "teaser": "Dependent on everything",
             "description": ""   
-        },{
-            "teaser": "...",
-            "description": ""   
         }
         ]
     },
@@ -125,9 +119,6 @@ export const oneMindset = {
             "description": ""   
         },{
             "teaser": "To do the wrong things",
-            "description": ""   
-        },{
-            "teaser": "...",
             "description": ""   
         }]
     }

@@ -27,9 +27,6 @@ export const oneWorld = {
         },{
             "teaser": "Knowledge ownership obligates sharing know how",
             "description": ""
-        },{
-            "teaser": "...",
-            "description": ""
         }]
     },
     "leftLeg": {          
@@ -47,9 +44,6 @@ export const oneWorld = {
         },{
             "teaser": "True sharing economy enables well-being for everyone",
             "description": ""
-        },{
-            "teaser": "...",
-            "description": ""
         }]
     },
     "rightLeg": {
@@ -66,9 +60,6 @@ export const oneWorld = {
             "description": ""   
         },{
             "teaser": " Well-being for everyone increases well-being for everything",
-            "description": ""   
-        },{
-            "teaser": "...",
             "description": ""   
         }]
     },

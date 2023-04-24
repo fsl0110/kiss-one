@@ -26,12 +26,6 @@ export const oneCurrency = {
         }, {
             "teaser": "Controls social and ecological values through prices, transparency, fairness and One Budget",
             "description": ""   
-        },{
-            "teaser": "",
-            "description": ""   
-        },{
-            "teaser": "...",
-            "description": ""   
         }],
     },
     "leftLeg":{
@@ -48,9 +42,6 @@ export const oneCurrency = {
             "description": ""   
         },{
             "teaser": "Leads to a better life by better acting",
-            "description": ""   
-        },{
-            "teaser": "...",
             "description": ""   
         }]
     },
@@ -71,9 +62,6 @@ export const oneCurrency = {
             "description": ""   
         },{
             "teaser": "Fairness towards ourselves",
-            "description": ""   
-        },{
-            "teaser": "...",
             "description": ""   
         }]
     },

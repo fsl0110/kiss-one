@@ -25,29 +25,9 @@ export const oneBudget = {
         },{
             "teaser": "A revenue is a thank you, it's an award for good work",
             "description": ""   
-        },{
-            "teaser": "...",
-            "description": ""   
         }]
     },
     "leftLeg": {
-        "name": "Rethought Incomes",
-        "description": "",
-        "thoughts": [{
-            "teaser": "Everyone has a right to a basic income",
-            "description": "Because of the budget: the fewer jobs there are, the higher the basic income, the more jobs there are, the lower the basic income. If there were no more jobs, then everyone would receive the average wage as basic income."   
-        },  {
-            "teaser": "Incomes are consumption rights for community and natural resources",
-            "description": ""   
-        }, {
-            "teaser": "More value for the community and nature means more consumption rights and vice versa",
-            "description": ""   
-        },{
-            "teaser": "...",
-            "description": ""   
-        }]
-    },
-    "rightLeg": {
         "name": "Rethought Prices",
         "description": "",
         "thoughts": [{
@@ -65,9 +45,21 @@ export const oneBudget = {
         },{
             "teaser": "The healthier the cheaper and vice versa",
             "description": ""   
-        }, {
-            "teaser": "",
-            "description": ""   
         }]
     },  
+    "rightLeg": {
+        "name": "Rethought Incomes",
+        "description": "",
+        "thoughts": [{
+            "teaser": "Everyone has a right to a basic income",
+            "description": "Because of the budget: the fewer jobs there are, the higher the basic income, the more jobs there are, the lower the basic income. If there were no more jobs, then everyone would receive the average wage as basic income."   
+        },  {
+            "teaser": "Incomes are consumption rights for community and natural resources",
+            "description": ""   
+        }, {
+            "teaser": "More value for the community and nature means more consumption rights and vice versa",
+            "description": ""   
+        }]
+    },
+   
 }

@@ -111,6 +111,7 @@ body {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 h1 {

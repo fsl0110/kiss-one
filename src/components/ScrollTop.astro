@@ -1,4 +1,4 @@
-<button class="btn">
+<button class="scroll-btn">
   <svg
     class="scroll-top-svg"
     xmlns="http://www.w3.org/2000/svg"
@@ -19,6 +19,7 @@
   svg {
     cursor: pointer;
   }
+
   button {
     position: fixed;
     bottom: 20px;
@@ -34,7 +35,9 @@
       : (btn.style.display = "none");
   });
 
-  const btn = document.getElementsByClassName("btn")[0] as HTMLButtonElement;
+  const btn = document.getElementsByClassName(
+    "scroll-btn"
+  )[0] as HTMLButtonElement;
 
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

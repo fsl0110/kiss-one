@@ -2,20 +2,21 @@
 interface Props {
   icon: string;
   size?: string;
+  padding?: string;
 }
 
-const { icon, size = "60px" } = Astro.props;
+const { icon, size = "60px", padding = 0 } = Astro.props;
 ---
 
 <div>{icon}</div>
 
-<style define:vars={{ size }}>
+<style define:vars={{ size, padding }}>
   div {
     font-size: var(--size);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 0;
+    padding: var(--padding);
   }
 </style>
