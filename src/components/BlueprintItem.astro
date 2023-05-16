@@ -1,0 +1,115 @@
+---
+import { slugify } from "@scripts/slugify";
+import Tooltip from "./Tooltip.astro";
+import classNames from "classnames";
+
+interface Props {
+  name: string;
+  thought: string;
+  description?: string;
+  topThought?: string;
+  type?: "TopThought" | "SubThought" | "DetailThought" | "MetaThought";
+  base?: string;
+  showNames?: boolean;
+  isAnchor?: boolean;
+  isTopthought?: boolean;
+}
+
+const {
+  base,
+  name,
+  thought,
+  description,
+  topThought = "",
+  type,
+  showNames = false,
+  isAnchor = false,
+  isTopthought = false,
+} = Astro.props;
+
+const styles = classNames({
+  "top-thought": type === "TopThought",
+  "sub-thought": type === "SubThought",
+  "detail-thought": type === "DetailThought",
+  "meta-thought": type === "MetaThought",
+});
+
+let path = "";
+
+if (base) {
+  path = `${slugify(base)}#${slugify(thought)}`;
+} else if (isTopthought) {
+  path = `${slugify(thought)}`;
+} else {
+  path = `${slugify(topThought)}#${slugify(thought)}`;
+}
+---
+
+<div class={`thought ${styles}`}>
+  {showNames && <div class="thought-name">{name}</div>}
+
+  {
+    description ? (
+      <Tooltip content={description}>
+        {isAnchor ? (
+          <a class="thought-text" href={path} title={description}>
+            {thought}
+          </a>
+        ) : (
+          <div class="thought-text" title={description}>
+            {thought}
+          </div>
+        )}
+      </Tooltip>
+    ) : !description && isAnchor ? (
+      <a class="thought-text" href={path} title={description}>
+        {thought}
+      </a>
+    ) : (
+      <div class="thought-text" title={description}>
+        {thought}
+      </div>
+    )
+  }
+</div>
+<style>
+  .thought {
+    font-size: 100%;
+    font-weight: 100;
+    padding: 0px;
+    margin: 0;
+  }
+
+  .thought-name {
+    font-size: 80%;
+    font-weight: 100;
+  }
+
+  .top-thought {
+    font-size: 140%;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sub-thought {
+    font-size: 125%;
+    font-weight: 400;
+    padding-top: 6px;
+    margin: 0;
+  }
+
+  .meta-thought {
+    font-size: 125%;
+    font-weight: 100;
+    padding-top: 6px;
+    margin: 0;
+  }
+
+  .detail-thought {
+    font-size: 110%;
+    font-weight: 100;
+    padding-top: 4px;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import OneCurrency from "@templates/OneCurrency.astro";
+import OneBudget from "@templates/OneBudget.astro";
+import OneWorld from "@templates/OneWorld.astro";
+import OneMindset from "@templates/OneMindset.astro";
+import Divider from "@components/Divider.astro";
+const image = "/one.png";
+---
+
+<div class="text-center one-compact">
+  <h1>One</h1>
+  <a href="http://kiss-everything.world" title="One = Everything"
+    ><img src={image} /></a
+  >
+  <Divider icon="=" padding="20px 0" />
+  <div class="flex">
+    <OneBudget />
+    <Divider icon="+" padding="0 10px 0 10px" />
+    <OneCurrency />
+    <Divider icon="+" padding="0 10px 0 10px" />
+    <OneWorld />
+  </div>
+  <Divider icon="=" padding="10px 0 10px 0" />
+  <OneMindset />
+</div>
+
+<style>
+  h1 {
+    font-size: 200%;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: -35px;
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .one-compact {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 880px) {
+    .flex {
+      flex-direction: column;
+    }
+  }
+</style>

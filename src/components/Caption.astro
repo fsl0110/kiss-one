@@ -1,0 +1,32 @@
+---
+import { CaptionTag } from "@apptypes/index";
+import { slugify } from "@scripts/slugify";
+
+interface Props {
+  text: string;
+  tag?: CaptionTag;
+}
+
+const { text, tag = "h3" } = Astro.props;
+const Element = tag;
+---
+
+<Element class="caption" id={slugify(text)}>{text}</Element>
+
+<style>
+  .caption {
+  }
+  h2,
+  h3 {
+    padding: 8px 0;
+  }
+
+  h2 {
+    font-size: 140%;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 125%;
+  }
+</style>

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "astro": "^2.2.1",
+    "classnames": "^2.3.2",
     "tippy.js": "^6.3.7"
   }
 }

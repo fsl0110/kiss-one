@@ -1,0 +1,116 @@
+---
+import BlueprintItem from "@components/BlueprintItem.astro";
+import { oneCurrency } from "@data/oneCurrency";
+---
+
+<div>
+  <BlueprintItem
+    name="Left Leg"
+    thought={oneCurrency.name}
+    description={oneCurrency.description}
+    isTopthought={true}
+    type="TopThought"
+    isAnchor={true}
+  />
+  <BlueprintItem
+    name="Left Leg - Arms"
+    thought={oneCurrency.arms.name}
+    description={oneCurrency.arms.description}
+    topThought={oneCurrency.name}
+    base={oneCurrency.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Arms - Arms"
+    thought={oneCurrency.arms.arms.name}
+    description={oneCurrency.arms.arms.description}
+    topThought={oneCurrency.arms.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Arms - Left Leg"
+    thought={oneCurrency.arms.leftLeg.name}
+    description={oneCurrency.arms.leftLeg.description}
+    topThought={oneCurrency.arms.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Arms - Right Leg"
+    thought={oneCurrency.arms.rightLeg.name}
+    description={oneCurrency.arms.rightLeg.description}
+    topThought={oneCurrency.arms.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Left Leg"
+    thought={oneCurrency.leftLeg.name}
+    description={oneCurrency.leftLeg.description}
+    topThought={oneCurrency.name}
+    base={oneCurrency.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Left Leg - Arms"
+    thought={oneCurrency.leftLeg.arms.name}
+    description={oneCurrency.leftLeg.arms.description}
+    topThought={oneCurrency.leftLeg.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Left Leg - Left Leg"
+    thought={oneCurrency.leftLeg.leftLeg.name}
+    description={oneCurrency.leftLeg.leftLeg.description}
+    topThought={oneCurrency.leftLeg.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Left Leg - Right Leg"
+    thought={oneCurrency.leftLeg.rightLeg.name}
+    description={oneCurrency.leftLeg.rightLeg.description}
+    topThought={oneCurrency.leftLeg.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Right Leg"
+    thought={oneCurrency.rightLeg.name}
+    description={oneCurrency.rightLeg.description}
+    topThought={oneCurrency.name}
+    base={oneCurrency.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Right Leg - Arms"
+    thought={oneCurrency.rightLeg.arms.name}
+    description={oneCurrency.rightLeg.arms.description}
+    topThought={oneCurrency.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Right Leg - Left Leg"
+    thought={oneCurrency.rightLeg.leftLeg.name}
+    description={oneCurrency.rightLeg.leftLeg.description}
+    topThought={oneCurrency.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Right Leg - Right Leg"
+    thought={oneCurrency.rightLeg.rightLeg.name}
+    description={oneCurrency.rightLeg.rightLeg.description}
+    topThought={oneCurrency.name}
+    base={oneCurrency.name}
+    type="DetailThought"
+  />
+</div>
+<style>
+  div {
+    width: 250px;
+  }
+</style>

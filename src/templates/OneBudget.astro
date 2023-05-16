@@ -1,0 +1,113 @@
+---
+import { oneBudget } from "@data/oneBudget";
+import BlueprintItem from "@components/BlueprintItem.astro";
+---
+
+<div>
+  <BlueprintItem
+    name="Arms"
+    thought={oneBudget.name}
+    description={oneBudget.description}
+    isTopthought={true}
+    type="TopThought"
+    isAnchor={true}
+  />
+  <BlueprintItem
+    name="Arms - Arms"
+    thought={oneBudget.arms.name}
+    description={oneBudget.arms.description}
+    topThought={oneBudget.name}
+    base={oneBudget.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Arms - Arms - Arms"
+    thought={oneBudget.arms.arms.name}
+    description={oneBudget.arms.arms.description}
+    topThought={oneBudget.arms.name}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Arms - Left Leg"
+    thought={oneBudget.arms.leftLeg.name}
+    description={oneBudget.arms.leftLeg.description}
+    topThought={oneBudget.arms.name}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Arms - Right Leg"
+    thought={oneBudget.arms.rightLeg.name}
+    description={oneBudget.arms.rightLeg.description}
+    topThought={oneBudget.arms.name}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Left Leg"
+    thought={oneBudget.leftLeg.name}
+    description={oneBudget.leftLeg.description}
+    topThought={oneBudget.name}
+    base={oneBudget.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Arms - Left Leg - Arms"
+    thought={oneBudget.leftLeg.arms.name}
+    description={oneBudget.leftLeg.arms.description}
+    topThought={oneBudget.leftLeg.name}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Left Leg - Left Leg"
+    thought={oneBudget.leftLeg.leftLeg.name}
+    description={oneBudget.leftLeg.leftLeg.description}
+    topThought={oneBudget.leftLeg.name}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Left Leg - Right Leg"
+    thought={oneBudget.leftLeg.rightLeg.name}
+    description={oneBudget.leftLeg.rightLeg.description}
+    topThought={oneBudget.leftLeg.name}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Right Leg"
+    thought={oneBudget.rightLeg.name}
+    description={oneBudget.rightLeg.description}
+    topThought={oneBudget.name}
+    base={oneBudget.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Arms - Right Leg - Arms"
+    thought={oneBudget.rightLeg.arms.name}
+    description={oneBudget.rightLeg.arms.description}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Right Leg - Left Leg"
+    thought={oneBudget.rightLeg.leftLeg.name}
+    description={oneBudget.rightLeg.leftLeg.description}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Right Leg - Right Leg"
+    thought={oneBudget.rightLeg.rightLeg.name}
+    description={oneBudget.rightLeg.rightLeg.description}
+    base={oneBudget.name}
+    type="DetailThought"
+  />
+</div>
+<style>
+  div {
+    width: 250px;
+  }
+</style>

@@ -1,0 +1,39 @@
+<div id="navbar">
+  <div class="left">
+    <div class="nav">
+      <slot name="nav" />
+    </div>
+    <slot name="home" />
+  </div>
+  <div class="right">
+    <slot name="scroll-top" />
+    <div class="toc">
+      <slot name="toc" />
+    </div>
+  </div>
+</div>
+
+<style>
+  #navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left,
+  .right {
+    display: flex;
+  }
+
+  .toc {
+    margin-left: 10px;
+  }
+
+  .nav {
+    margin-right: 10px;
+  }
+</style>

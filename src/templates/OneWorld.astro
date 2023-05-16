@@ -1,0 +1,113 @@
+---
+import BlueprintItem from "@components/BlueprintItem.astro";
+import { oneWorld } from "@data/oneWorld";
+---
+
+<div>
+  <BlueprintItem
+    name="Right Leg"
+    thought={oneWorld.name}
+    description={oneWorld.description}
+    isTopthought={true}
+    type="TopThought"
+    isAnchor={true}
+  />
+  <BlueprintItem
+    name="Right Leg - Arms"
+    thought={oneWorld.arms.name}
+    description={oneWorld.arms.description}
+    topThought={oneWorld.name}
+    base={oneWorld.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Arms - Arms"
+    thought={oneWorld.arms.arms.name}
+    description={oneWorld.arms.arms.description}
+    topThought={oneWorld.arms.name}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Arms - Left Leg"
+    thought={oneWorld.arms.leftLeg.name}
+    description={oneWorld.arms.leftLeg.description}
+    topThought={oneWorld.arms.name}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Arms - Right Leg"
+    thought={oneWorld.arms.rightLeg.name}
+    description={oneWorld.arms.rightLeg.description}
+    topThought={oneWorld.arms.name}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Left Leg"
+    thought={oneWorld.leftLeg.name}
+    description={oneWorld.leftLeg.description}
+    topThought={oneWorld.name}
+    base={oneWorld.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Left Leg - Arms"
+    thought={oneWorld.leftLeg.arms.name}
+    description={oneWorld.leftLeg.arms.description}
+    topThought={oneWorld.leftLeg.name}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Left Leg - Left Leg"
+    thought={oneWorld.leftLeg.leftLeg.name}
+    description={oneWorld.leftLeg.leftLeg.description}
+    topThought={oneWorld.leftLeg.name}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Left Leg - Right Leg"
+    thought={oneWorld.leftLeg.rightLeg.name}
+    description={oneWorld.leftLeg.rightLeg.description}
+    topThought={oneWorld.leftLeg.name}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Right Leg"
+    thought={oneWorld.rightLeg.name}
+    description={oneWorld.rightLeg.description}
+    topThought={oneWorld.name}
+    base={oneWorld.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Right Leg - Arms"
+    thought={oneWorld.rightLeg.arms.name}
+    description={oneWorld.rightLeg.arms.description}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Right Leg - Left Leg"
+    thought={oneWorld.rightLeg.leftLeg.name}
+    description={oneWorld.rightLeg.leftLeg.description}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Right Leg - Right Leg"
+    thought={oneWorld.rightLeg.rightLeg.name}
+    description={oneWorld.rightLeg.rightLeg.description}
+    base={oneWorld.name}
+    type="DetailThought"
+  />
+</div>
+<style>
+  div {
+    width: 250px;
+  }
+</style>

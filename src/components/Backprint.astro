@@ -1,0 +1,24 @@
+---
+import Thoughts from "./Thoughts.astro";
+import Divider from "./Divider.astro";
+import { SubThoughts } from "@apptypes/index";
+import Caption from "./Caption.astro";
+
+interface Props {
+  data: SubThoughts;
+}
+
+const { arms, leftLeg, rightLeg } = Astro.props.data;
+---
+
+<div class="text-center">
+  <Divider icon="=" />
+  <Caption text={arms.name} />
+  <Thoughts data={arms.thoughts} />
+  <Divider icon="+" />
+  <Caption text={leftLeg.name} />
+  <Thoughts data={leftLeg.thoughts} />
+  <Divider icon="+" />
+  <Caption text={rightLeg.name} />
+  <Thoughts data={rightLeg.thoughts} />
+</div>

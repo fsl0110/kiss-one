@@ -1,0 +1,67 @@
+---
+import { CaptionTags, TopThoughts } from "@apptypes/index";
+import Blueprint from "@components/Blueprint.astro";
+import Divider from "@components/Divider.astro";
+
+interface Props {
+  data: TopThoughts;
+  captionTag?: CaptionTags;
+  captionSize?: string;
+  showBackside?: boolean;
+}
+
+const {
+  data,
+  captionTag = ["div", "div", "div", "div", "div"],
+  captionSize = "21px",
+  showBackside = false,
+} = Astro.props;
+
+let currentClass = !showBackside ? "ones--no-backside" : "ones";
+---
+
+<div class={currentClass}>
+  <Blueprint
+    data={data}
+    captionTag={captionTag[0]}
+    captionSize={captionSize}
+    captionLink={false}
+  />
+  <Divider icon="=" />
+  <Blueprint
+    data={data.arms}
+    base={data.name}
+    captionTag={captionTag[1]}
+    captionSize={captionSize}
+    captionLink={false}
+  />
+  <Divider icon="+" />
+  <Blueprint
+    data={data.leftLeg}
+    base={data.name}
+    captionTag={captionTag[2]}
+    captionSize={captionSize}
+    captionLink={false}
+  />
+  <Divider icon="+" />
+  <Blueprint
+    data={data.rightLeg}
+    base={data.name}
+    captionTag={captionTag[3]}
+    captionSize={captionSize}
+    captionLink={false}
+  />
+  {
+    (showBackside || data.backside.name === "One") && (
+      <>
+        <Divider icon="=" />
+        <Blueprint
+          data={data.backside}
+          captionTag={captionTag[4]}
+          captionSize={captionSize}
+          captionLink={false}
+        />
+      </>
+    )
+  }
+</div>

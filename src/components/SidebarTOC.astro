@@ -1,0 +1,209 @@
+---
+import Tooltip from "./Tooltip.astro";
+import type { TopThoughts } from "@apptypes/index";
+import { slugify } from "@scripts/slugify";
+import Divider from "./Divider.astro";
+import { btnSize } from "src/consts";
+import SidebarItem from "./SidebarItem.astro";
+
+interface Props {
+  data: TopThoughts;
+}
+
+const { data } = Astro.props;
+
+const setSpecialpath = (dataName: string, itemName: string) => {
+  if (dataName === "One Mindset") {
+    return slugify(itemName);
+  } else {
+    return `${slugify(dataName)}#${slugify(itemName)}`;
+  }
+};
+---
+
+<button class="btn" id="open-toc-btn"
+  ><Tooltip content="One World">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={btnSize}
+      height={btnSize}
+      viewBox="0 0 16 16"
+      ><path
+        fill="currentColor"
+        d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7zm0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8z"
+      ></path><path
+        fill="currentColor"
+        d="M4 7h2v2H4V7zm3 0h2v2H7V7zm3 0h2v2h-2V7z"></path></svg
+    >
+  </Tooltip>
+</button>
+
+<aside id="toc-sidebar" class="sidebar">
+  <button id="close-toc-btn"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={btnSize}
+      height={btnSize}
+      viewBox="0 0 16 16"
+      ><path
+        fill="currentColor"
+        d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7zm0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8z"
+      ></path><path
+        fill="currentColor"
+        d="M12.2 10.8L9.4 8l2.8-2.8l-1.4-1.4L8 6.6L5.2 3.8L3.8 5.2L6.6 8l-2.8 2.8l1.4 1.4L8 9.4l2.8 2.8z"
+      ></path></svg
+    ></button
+  >
+  <div class="text-center">
+    <a class="sb__one-thought" href="/">One</a>
+    <Divider icon="=" size="40px" />
+    <SidebarItem
+      class="sb__top-thought"
+      href={`${slugify(data.name)}#${slugify(data.arms.name)}`}
+      >{data.arms.name}</SidebarItem
+    >
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.arms.arms.name)}`}
+    >
+      {data.arms.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.arms.leftLeg.name)}`}
+    >
+      {data.arms.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.arms.rightLeg.name)}`}
+    >
+      {data.arms.rightLeg.name}
+    </SidebarItem>
+    <Divider icon="+" size="40px" />
+    <SidebarItem
+      class="sb__top-thought"
+      href={`${slugify(data.name)}#${slugify(data.leftLeg.name)}`}
+    >
+      {data.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.leftLeg.arms.name)}`}
+    >
+      {data.leftLeg.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.leftLeg.leftLeg.name)}`}
+    >
+      {data.leftLeg.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.leftLeg.rightLeg.name)}`}
+    >
+      {data.leftLeg.rightLeg.name}
+    </SidebarItem>
+    <Divider icon="+" size="40px" />
+    <SidebarItem
+      class="sb__top-thought"
+      href={`${slugify(data.name)}#${slugify(data.rightLeg.name)}`}
+      >{data.rightLeg.name}</a
+    >
+
+    <SidebarItem  href={`${slugify(data.name)}#${slugify(data.rightLeg.arms.name)}`} className="sb__sub-thought">{data.rightLeg.arms.name}</SidebarItem>
+    <SidebarItem
+   
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.rightLeg.leftLeg.name)}`}
+    >
+      {data.rightLeg.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+  
+      class="sb__sub-thought"
+      href={`${slugify(data.name)}#${slugify(data.rightLeg.rightLeg.name)}`}
+    >
+      {data.rightLeg.rightLeg.name}
+    </SidebarItem>
+    <Divider icon="=" size="40px" />
+    <SidebarItem class="sb__top-thought" href={setSpecialpath(data.name, data.name)}
+      >{data.name}</SidebarItem
+    >
+    {
+      data.name === "One Mindset" && (
+    <SidebarItem
+      class="sb__sub-thought"
+      href={setSpecialpath(data.name, data.backside.arms.name)}
+    >
+      {data.backside.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={setSpecialpath(data.name, data.backside.leftLeg.name)}
+    >
+      {data.backside.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={setSpecialpath(data.name, data.backside.rightLeg.name)}
+    >
+      {data.backside.rightLeg.name}
+    </SidebarItem>
+    )
+  }
+  </div>
+</aside>
+<style>
+  #toc-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-left: 2px solid black;
+    width: 300px;
+  }
+
+  #close-toc-btn {
+    position: absolute;
+    top: 20px;
+    right: 240px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  const tocSidebar = document.querySelector("#toc-sidebar") as HTMLDivElement;
+  const tocBtn = document.querySelector("#open-toc-btn") as HTMLButtonElement;
+  const closeBtn = document.querySelector(
+    "#close-toc-btn"
+  ) as HTMLButtonElement;
+  const navBar = document.querySelector("#navbar") as HTMLDivElement;
+
+  const sidebarOpen = localStorage.getItem("toc-sidebar");
+
+  const show = () => {
+    tocSidebar.style.display = "block";
+    navBar.style.paddingRight = "310px";
+    tocBtn.style.display = "none";
+  };
+
+  const hide = () => {
+    tocSidebar.style.display = "none";
+    navBar.style.paddingRight = "20px";
+    tocBtn.style.display = "block";
+  };
+
+  if (sidebarOpen === "true") {
+    show();
+  }
+
+  closeBtn.addEventListener("click", () => {
+    localStorage.setItem("toc-sidebar", "false");
+    hide();
+  });
+
+  tocBtn.addEventListener("click", () => {
+    localStorage.setItem("toc-sidebar", "true");
+    show();
+  });
+</script>

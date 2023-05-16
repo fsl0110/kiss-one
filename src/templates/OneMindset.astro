@@ -1,0 +1,116 @@
+---
+import BlueprintItem from "@components/BlueprintItem.astro";
+import { oneMindset } from "@data/oneMindset";
+---
+
+<div>
+  <BlueprintItem
+    name="Backside"
+    thought={oneMindset.name}
+    description={oneMindset.description}
+    isTopthought={true}
+    type="TopThought"
+    isAnchor={true}
+  />
+  <BlueprintItem
+    name="Arms"
+    thought={oneMindset.arms.name}
+    description={oneMindset.arms.description}
+    topThought={oneMindset.name}
+    base={oneMindset.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Arms - Arms"
+    thought={oneMindset.arms.arms.name}
+    description={oneMindset.arms.arms.description}
+    topThought={oneMindset.arms.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Left Leg"
+    thought={oneMindset.arms.leftLeg.name}
+    description={oneMindset.arms.leftLeg.description}
+    topThought={oneMindset.arms.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Arms - Right Leg"
+    thought={oneMindset.arms.rightLeg.name}
+    description={oneMindset.arms.rightLeg.description}
+    topThought={oneMindset.arms.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg"
+    thought={oneMindset.leftLeg.name}
+    description={oneMindset.leftLeg.description}
+    topThought={oneMindset.name}
+    base={oneMindset.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Arms"
+    thought={oneMindset.leftLeg.arms.name}
+    description={oneMindset.leftLeg.arms.description}
+    topThought={oneMindset.leftLeg.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Left Leg"
+    thought={oneMindset.leftLeg.leftLeg.name}
+    description={oneMindset.leftLeg.leftLeg.description}
+    topThought={oneMindset.leftLeg.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Left Leg - Right Leg"
+    thought={oneMindset.leftLeg.rightLeg.name}
+    description={oneMindset.leftLeg.rightLeg.description}
+    topThought={oneMindset.leftLeg.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg"
+    thought={oneMindset.rightLeg.name}
+    description={oneMindset.rightLeg.description}
+    topThought={oneMindset.name}
+    base={oneMindset.name}
+    type="SubThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Arms"
+    thought={oneMindset.rightLeg.arms.name}
+    description={oneMindset.rightLeg.arms.description}
+    topThought={oneMindset.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Left Leg"
+    thought={oneMindset.rightLeg.leftLeg.name}
+    description={oneMindset.rightLeg.leftLeg.description}
+    topThought={oneMindset.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+  <BlueprintItem
+    name="Right Leg - Right Leg"
+    thought={oneMindset.rightLeg.rightLeg.name}
+    description={oneMindset.rightLeg.rightLeg.description}
+    topThought={oneMindset.name}
+    base={oneMindset.name}
+    type="DetailThought"
+  />
+</div>
+<style>
+  div {
+    width: 250px;
+  }
+</style>

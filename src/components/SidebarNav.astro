@@ -1,0 +1,207 @@
+---
+import { slugify } from "@scripts/slugify";
+import Divider from "./Divider.astro";
+import Tooltip from "./Tooltip.astro";
+import { btnSize } from "src/consts";
+import { oneWorld } from "@data/oneWorld";
+import { oneBudget } from "@data/oneBudget";
+import { oneCurrency } from "@data/oneCurrency";
+import { oneMindset } from "@data/oneMindset";
+import SidebarItem from "./SidebarItem.astro";
+---
+
+<button class="btn" id="open-nav-btn"
+  ><Tooltip content="One Life">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={btnSize}
+      height={btnSize}
+      viewBox="0 0 16 16"
+      ><path
+        fill="currentColor"
+        d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7zm0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8z"
+      ></path><path
+        fill="currentColor"
+        d="M4 7h2v2H4V7zm3 0h2v2H7V7zm3 0h2v2h-2V7z"></path></svg
+    >
+  </Tooltip>
+</button>
+
+<nav id="nav-sidebar" class="sidebar">
+  <button id="close-nav-btn"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={btnSize}
+      height={btnSize}
+      viewBox="0 0 16 16"
+      ><path
+        fill="currentColor"
+        d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7s-7-3.1-7-7s3.1-7 7-7zm0-1C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8z"
+      ></path><path
+        fill="currentColor"
+        d="M12.2 10.8L9.4 8l2.8-2.8l-1.4-1.4L8 6.6L5.2 3.8L3.8 5.2L6.6 8l-2.8 2.8l1.4 1.4L8 9.4l2.8 2.8z"
+      ></path></svg
+    ></button
+  >
+  <div class="text-center">
+    <a class="sb__one-thought" href="/">One</a>
+    <Divider icon="=" size="40px" />
+    <SidebarItem
+      isAnchor={true}
+      class="sb__top-thought"
+      href={slugify(oneBudget.name)}
+    >
+      {oneBudget.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneBudget.name)}#${slugify(oneBudget.arms.name)}`}
+    >
+      {oneBudget.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneBudget.name)}#${slugify(oneBudget.leftLeg.name)}`}
+    >
+      {oneBudget.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneBudget.name)}#${slugify(oneBudget.rightLeg.name)}`}
+    >
+      {oneBudget.rightLeg.name}
+    </SidebarItem>
+    <Divider icon="+" size="40px" />
+    <SidebarItem
+      isAnchor={true}
+      class="sb__top-thought"
+      href={slugify(oneCurrency.name)}
+    >
+      {oneCurrency.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneCurrency.name)}#${slugify(oneCurrency.arms.name)}`}
+    >
+      {oneCurrency.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneCurrency.name)}#${slugify(oneCurrency.leftLeg.name)}`}
+    >
+      {oneCurrency.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneCurrency.name)}#${slugify(
+        oneCurrency.rightLeg.name
+      )}`}
+    >
+      {oneCurrency.rightLeg.name}
+    </SidebarItem>
+    <Divider icon="+" size="40px" />
+    <SidebarItem
+      isAnchor={true}
+      class="sb__top-thought"
+      href={slugify(oneWorld.name)}
+    >
+      {oneWorld.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneWorld.name)}#${slugify(oneWorld.arms.name)}`}
+    >
+      {oneWorld.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneWorld.name)}#${slugify(oneWorld.leftLeg.name)}`}
+    >
+      {oneWorld.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneWorld.name)}#${slugify(oneWorld.rightLeg.name)}`}
+    >
+      {oneWorld.rightLeg.name}
+    </SidebarItem>
+    <Divider icon="=" size="40px" />
+    <SidebarItem
+      isAnchor={true}
+      class="sb__top-thought"
+      href={slugify(oneMindset.name)}
+    >
+      {oneMindset.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneMindset.name)}#${slugify(oneMindset.arms.name)}`}
+    >
+      {oneMindset.arms.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneMindset.name)}#${slugify(oneMindset.leftLeg.name)}`}
+    >
+      {oneMindset.leftLeg.name}
+    </SidebarItem>
+    <SidebarItem
+      class="sb__sub-thought"
+      href={`${slugify(oneMindset.name)}#${slugify(oneMindset.rightLeg.name)}`}
+    >
+      {oneMindset.rightLeg.name}
+    </SidebarItem>
+  </div>
+
+  <style>
+    #nav-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-right: 2px solid black;
+    }
+
+    #close-nav-btn {
+      position: absolute;
+      top: 20px;
+      left: 240px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    const nav = document.querySelector("#nav-sidebar") as HTMLDivElement;
+    const navBtn = document.querySelector("#open-nav-btn") as HTMLButtonElement;
+    const closeBtn = document.querySelector(
+      "#close-nav-btn"
+    ) as HTMLButtonElement;
+    const navBar = document.querySelector("#navbar") as HTMLDivElement;
+
+    const sidebarOpen = localStorage.getItem("nav-sidebar");
+
+    const show = () => {
+      nav.style.display = "block";
+      navBtn.style.display = "none";
+      navBar.style.paddingLeft = "310px";
+    };
+
+    const hide = () => {
+      nav.style.display = "none";
+      navBtn.style.display = "block";
+      navBar.style.paddingLeft = "20px";
+    };
+
+    if (sidebarOpen === "true") {
+      show();
+    }
+
+    closeBtn.addEventListener("click", () => {
+      localStorage.setItem("nav-sidebar", "false");
+      hide();
+    });
+
+    navBtn.addEventListener("click", () => {
+      localStorage.setItem("nav-sidebar", "true");
+      show();
+    });
+  </script>
+</nav>

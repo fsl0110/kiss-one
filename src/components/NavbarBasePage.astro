@@ -1,0 +1,21 @@
+---
+import HomeLink from "@components/HomeLink.astro";
+import ScrollTop from "@components/ScrollTop.astro";
+import Navbar from "@components/Navbar.astro";
+import { TopThoughts } from "@apptypes/index";
+import SidebarTOC from "./SidebarTOC.astro";
+import SidebarNav from "./SidebarNav.astro";
+
+interface Props {
+  data: TopThoughts;
+}
+
+const { data } = Astro.props;
+---
+
+<Navbar>
+  <HomeLink slot="home" />
+  <SidebarNav slot="nav" />
+  <ScrollTop slot="scroll-top" />
+  <SidebarTOC data={data} slot="toc" />
+</Navbar>

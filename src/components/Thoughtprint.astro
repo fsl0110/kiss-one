@@ -1,0 +1,60 @@
+---
+import Thoughts from "./Thoughts.astro";
+import Divider from "./Divider.astro";
+import { TopThoughts } from "@apptypes/index";
+import Caption from "./Caption.astro";
+
+interface Props {
+  data: TopThoughts;
+}
+
+const { name, arms, leftLeg, rightLeg } = Astro.props.data;
+---
+
+<div>
+  <h1>{name}</h1>
+  <Divider icon="=" />
+  <Caption tag="h2" text={arms.name} />
+  <Thoughts data={arms.thoughts} />
+  <Caption tag="h3" text={arms.arms.name} />
+  <Thoughts data={arms.arms.thoughts} />
+  <Divider icon="&" size="30px" />
+  <Caption tag="h3" text={arms.leftLeg.name} />
+  <Thoughts data={arms.leftLeg.thoughts} />
+  <Divider icon="&" size="30px" />
+  <Caption tag="h3" text={arms.rightLeg.name} />
+  <Thoughts data={arms.rightLeg.thoughts} />
+  <Divider icon="+" />
+  <Caption tag="h2" text={leftLeg.name} />
+  <Thoughts data={leftLeg.thoughts} />
+  <Caption tag="h3" text={leftLeg.arms.name} />
+  <Thoughts data={leftLeg.arms.thoughts} />
+  <Divider icon="&" size="30px" />
+  <Caption tag="h3" text={leftLeg.leftLeg.name} />
+  <Thoughts data={leftLeg.leftLeg.thoughts} />
+  <Divider icon="&" size="30px" />
+  <Caption tag="h3" text={leftLeg.rightLeg.name} />
+  <Thoughts data={leftLeg.rightLeg.thoughts} />
+  <Divider icon="+" />
+  <Caption tag="h2" text={rightLeg.name} />
+  <Thoughts data={rightLeg.thoughts} />
+  <Caption tag="h3" text={rightLeg.arms.name} />
+  <Thoughts data={rightLeg.arms.thoughts} />
+  <Divider icon="&" size="30px" />
+  <Caption tag="h3" text={rightLeg.leftLeg.name} />
+  <Thoughts data={rightLeg.leftLeg.thoughts} />
+  <Divider icon="&" size="30px" />
+  <Caption tag="h3" text={rightLeg.rightLeg.name} />
+  <Thoughts data={rightLeg.rightLeg.thoughts} />
+
+  <style>
+    div {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 200%;
+    }
+  </style>
+</div>

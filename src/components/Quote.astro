@@ -2,9 +2,10 @@
 interface Props {
   text: string;
   author: string;
+  margin?: string;
 }
 
-const { text, author } = Astro.props;
+const { text, author, margin = "40px 0" } = Astro.props;
 ---
 
 <div>
@@ -14,16 +15,21 @@ const { text, author } = Astro.props;
   {author}
 </div>
 
-<style>
+<style define:vars={{ margin }}>
   div {
+    padding: 30px;
+    margin: var(--margin);
     text-align: center;
-    border-top: 1px solid black;
-    padding: 40px 0;
+    font-size: 80%;
+    /*     border-top: 2px solid black;
+    border-bottom: 2px solid black; */
   }
 
   blockquote {
-    font-size: 140%;
+    font-size: 180%;
     font-weight: 100;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    line-height: 140%;
+    text-align: center;
   }
 </style>

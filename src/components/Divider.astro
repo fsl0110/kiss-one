@@ -5,7 +5,7 @@ interface Props {
   padding?: string;
 }
 
-const { icon, size = "60px", padding = 0 } = Astro.props;
+const { icon, size = "60px", padding = "0 10px" } = Astro.props;
 ---
 
 <div>{icon}</div>
@@ -13,7 +13,6 @@ const { icon, size = "60px", padding = 0 } = Astro.props;
 <style define:vars={{ size, padding }}>
   div {
     font-size: var(--size);
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

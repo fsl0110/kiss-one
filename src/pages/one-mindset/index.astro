@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NavbarBasePage from "@components/NavbarBasePage.astro";
+import { oneMindset } from "@data/oneMindset";
+import { one } from "@data/one";
+import Blueprint from "@components/Blueprint.astro";
+import Divider from "@components/Divider.astro";
+---
+
+<BaseLayout title={one.backside.name} description={one.backside.description}>
+  <div class="ones">
+    <Blueprint data={oneMindset} captionTag="h1" captionLink={false} />
+    <Divider icon="=" />
+    <Blueprint data={oneMindset.arms} captionTag="h2" captionLink={false} />
+    <Divider icon="+" />
+    <Blueprint data={oneMindset.leftLeg} captionTag="h2" captionLink={false} />
+    <Divider icon="+" />
+    <Blueprint data={oneMindset.rightLeg} captionTag="h2" captionLink={false} />
+    <Divider icon="=" />
+    <Blueprint data={oneMindset.backside} captionTag="h2" />
+  </div>
+</BaseLayout>
+<NavbarBasePage data={oneMindset} />

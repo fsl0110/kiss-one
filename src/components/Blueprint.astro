@@ -1,66 +1,119 @@
 ---
-import type { ShortThought, Thoughts } from "../data/one";
-import BlueprintAnker from "./BlueprintAnchor.astro";
-import BlueprintTooltip from "./BlueprintTooltip.astro";
+import { slugify } from "@scripts/slugify";
+import BlueprintItem from "./BlueprintItem.astro";
+import { CaptionTag, SubThoughts, TopThoughts } from "@apptypes/index";
 
-const image = "/everything-everywhere-allatonce.png";
+const image = "/one.png";
 
 interface Props {
-  name: string;
-  layer: ShortThought;
-  circle: ShortThought;
-  heart: ShortThought;
-  arms: Thoughts;
-  leftLeg: Thoughts;
-  rightLeg: Thoughts;
+  data: TopThoughts | SubThoughts;
+  base?: string;
+  caption?: string;
+  captionTag?: CaptionTag;
+  captionSize?: string;
+  captionLink?: boolean;
 }
 
-const { name, arms, leftLeg, rightLeg, heart, circle } = Astro.props;
+const {
+  data,
+  base,
+  caption,
+  captionTag = "div",
+  captionSize = "23px",
+  captionLink = true,
+} = Astro.props;
+
+const { name, arms, leftLeg, rightLeg, circle, heart, layer } = data;
+
+const Element = captionTag;
+
+let path = "";
+
+if (base) {
+  path = `${slugify(base)}#${slugify(name)}`;
+} else {
+  path = slugify(name);
+}
 ---
 
-<div>
-  <h2>{name}</h2>
-  <img src={image} width="200" height="200" />
-  <BlueprintAnker
+<div class="blueprint text-center">
+  <Element class="caption">
+    {
+      captionLink ? (
+        <a href={path}>{caption ? caption : name}</a>
+      ) : caption ? (
+        caption
+      ) : (
+        name
+      )
+    }
+  </Element>
+  <img class="img-one" src={image} />
+  <BlueprintItem
     name="Arms"
+    type="SubThought"
     thought={arms.name}
     description={arms.description}
+    topThought={name}
+    base={base}
+    showNames={true}
   />
-  <BlueprintAnker
+  <BlueprintItem
     name="Left Leg"
+    type="SubThought"
     thought={leftLeg.name}
     description={leftLeg.description}
+    topThought={name}
+    base={base}
+    showNames={true}
   />
-  <BlueprintAnker
+  <BlueprintItem
     name="Right Leg"
+    type="SubThought"
     thought={rightLeg.name}
     description={rightLeg.description}
+    topThought={name}
+    base={base}
+    showNames={true}
   />
-  <BlueprintTooltip
+  <BlueprintItem
     name="Heart"
+    type="MetaThought"
     thought={heart.name}
     description={heart.description}
+    showNames={true}
   />
-  <BlueprintTooltip
+  <BlueprintItem
     name="Circle"
+    type="MetaThought"
     thought={circle.name}
     description={circle.description}
+    showNames={true}
   />
-  <!--   <BlueprintTooltip
+  <BlueprintItem
     name="Layer"
+    type="MetaThought"
     thought={layer.name}
-    desc={layer.description}
-  /> -->
+    description={layer.description}
+    showNames={true}
+  />
 </div>
 
-<style>
-  div {
-    text-align: center;
-    margin: 40px;
-    min-width: 200px;
+<style define:vars={{ captionSize }}>
+  .blueprint {
+    margin: 0px 10px;
+    min-width: 230px;
   }
 
-  h2 {
+  .caption {
+    display: block;
     padding-top: 14px;
+    padding-bottom: 2px;
+    font-size: var(--captionSize);
+  }
+
+  .img-one {
+    width: 200px;
+    height: 200px;
   }
 </style>

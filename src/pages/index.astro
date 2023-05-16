@@ -1,66 +1,43 @@
 ---
-import Divider from "../components/Divider.astro";
-import One from "../components/One.astro";
-import ScrollTop from "../components/ScrollTop.astro";
-import Quote from "../components/Quote.astro";
-import Header from "../components/Header.astro";
-import TOC from "../components/TOC.astro";
-import Thoughts from "../components/Thoughts.astro";
-import { oneThoughts } from "../data/one";
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
-const { OneWorld, OneBudget, OneCurrency, OneMindset } = oneThoughts;
+import Divider from "@components/Divider.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Navbar from "@components/Navbar.astro";
+import ScrollTop from "@components/ScrollTop.astro";
+import SidebarNav from "@components/SidebarNav.astro";
+import SidebarTOC from "@components/SidebarTOC.astro";
+import Quote from "@components/Quote.astro";
+import Blueprint from "@components/Blueprint.astro";
+import OneCompact from "@components/OneCompact.astro";
+import { oneWorld } from "@data/oneWorld";
+import { oneBudget } from "@data/oneBudget";
+import { oneCurrency } from "@data/oneCurrency";
+import { oneMindset } from "@data/oneMindset";
+import { one } from "@data/one";
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <main>
-      <Header />
-      <One />
-      <Quote
-        text="„We can't solve problems by using the same kind of thinking we used when we created them.”"
-        author="Albert Einstein"
-      />
-      <section class="content">
-        <Divider icon="*** DRAFT ***" size="80px" />
-        <Divider icon="#" size="80px" padding="20px 0" />
-        <Thoughts data={OneWorld.arms} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneWorld.leftLeg} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneWorld.rightLeg} />
-        <Divider icon="+" size="80px" padding="20px 0" />
-        <Thoughts data={OneBudget.arms} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneBudget.leftLeg} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneBudget.rightLeg} />
-        <Divider icon="+" size="80px" padding="20px 0" />
-        <Thoughts data={OneCurrency.arms} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneCurrency.leftLeg} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneCurrency.rightLeg} />
-        <Divider icon="=" size="80px" padding="20px 0" />
-        <Thoughts data={OneMindset.arms} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneMindset.leftLeg} />
-        <Divider icon="&" size="40px" padding="20px 0" />
-        <Thoughts data={OneMindset.rightLeg} />
-      </section>
-    </main>
-    <TOC />
-    <ScrollTop />
-    <style>
-      .content {
-        text-align: center;
-        border-top: 1px solid black;
-        padding-top: 80px;
-      }
-    </style>
-  </body>
-</html>
+<BaseLayout
+  title="KISS One = One Budget + One Currency + One World = KISS One Mindset"
+  description="Everyone Everywhere Alltogether - Everything Everywhere All At Once"
+>
+  <OneCompact />
+  <Quote
+    text="„We can't solve problems by using the same kind of thinking we used when we created them.”"
+    author="Albert Einstein"
+  />
+  <div class="ones">
+    <Blueprint data={one} captionLink={false} caption="One" />
+    <Divider icon="=" />
+    <Blueprint data={oneBudget} captionTag="h2" />
+    <Divider icon="+" />
+    <Blueprint data={oneCurrency} captionTag="h2" />
+    <Divider icon="+" />
+    <Blueprint data={oneWorld} captionTag="h2" />
+    <Divider icon="=" />
+    <Blueprint data={oneMindset} captionTag="h2" />
+  </div>
+  <Navbar>
+    <SidebarNav slot="nav" />
+    <ScrollTop slot="scroll-top" />
+    <SidebarTOC data={oneMindset} slot="toc" />
+  </Navbar>
+</BaseLayout>˚

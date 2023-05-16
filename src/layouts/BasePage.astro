@@ -1,0 +1,17 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NavbarBasePage from "@components/NavbarBasePage.astro";
+import Oneprint from "@components/Oneprint.astro";
+import { TopThoughts } from "@apptypes/index";
+
+interface Props {
+  data: TopThoughts;
+}
+
+const { data } = Astro.props;
+---
+
+<BaseLayout title={data.name} description={data.description}>
+  <Oneprint data={data} captionTag={["h1", "h2", "h2", "h2", "h2"]} />
+  <NavbarBasePage data={data} />
+</BaseLayout>
