@@ -16,7 +16,7 @@ export const oneCurrencyLeftLeg: SubThoughts = {
         "description": ""
     },
     "arms": {
-        "name": "Transparency",
+        "name": "Trust by Transparency",
         "description": "",
         "thoughts": [{
             "name": "",
@@ -33,7 +33,7 @@ export const oneCurrencyLeftLeg: SubThoughts = {
         }]
     },
     "leftLeg": {
-        "name": "Fairness",
+        "name": "Trust by Fairness",
         "description": "",
         "thoughts": [{
             "name": "",
@@ -50,7 +50,7 @@ export const oneCurrencyLeftLeg: SubThoughts = {
         }]
     },
     "rightLeg": {
-        "name": "Simplicity",
+        "name": "Trust by Simplicity",
         "description": "",
         "thoughts": [{
             "name": "",

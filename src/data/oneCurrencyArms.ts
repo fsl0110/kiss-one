@@ -33,7 +33,7 @@ export const oneCurrencyArms: SubThoughts = {
         }]
     },
     "leftLeg": {
-        "name": "Used as a Ecosocial Guide",
+        "name": "Used as an Ecosocial Guide",
         "description": "",
         "thoughts": [{
             "name": "",
