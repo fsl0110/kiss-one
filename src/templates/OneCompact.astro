@@ -4,14 +4,17 @@ import OneBudget from "@templates/OneBudget.astro";
 import OneWorld from "@templates/OneWorld.astro";
 import OneMindset from "@templates/OneMindset.astro";
 import Divider from "@components/Divider.astro";
+import Tooltip from "@components/Tooltip.astro";
 const image = "/one.png";
 ---
 
 <div class="text-center one-compact">
   <h1>One</h1>
-  <a href="http://kiss-everything.world" title="One = Everything"
-    ><img src={image} /></a
-  >
+  <Tooltip content="One = Everything">
+    <a href="http://kiss-everything.world" title="Everything = One"
+      ><img src={image} /></a
+    >
+  </Tooltip>
   <Divider icon="=" padding="20px 0" />
   <div class="flex">
     <OneBudget />
